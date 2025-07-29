@@ -1,14 +1,6 @@
 import re
 import nltk
 import pdfplumber
-nltk.download('punkt', quiet=True)
-
-
-# Ensure punkt is downloaded at runtime (safe for local and cloud)
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt', quiet=True)
 
 
 def extract_text_from_pdf(pdf_path):
