@@ -7,20 +7,13 @@ from resume_parser import (
 import tempfile
 import os
 import streamlit as st
-import nltk
 import pandas as pd
-
-# Ensure NLTK punkt data is available (fixes deployment errors)
-nltk.download('punkt', quiet=True)
 
 st.title('Resume Screening Tool')
 
 st.write('Upload a job description and multiple resumes (PDF or TXT). The tool will rank resumes based on their match to the job description.')
 
-# Input: Job Description
 job_desc = st.text_area('Paste the Job Description here:')
-
-# Input: Resume files
 resume_files = st.file_uploader('Upload Resumes (PDF or TXT, multiple allowed)', type=['pdf', 'txt'], accept_multiple_files=True)
 
 if st.button('Check Resumes'):
