@@ -1,8 +1,15 @@
-import pdfplumber
-import nltk
 import re
-
+import nltk
+import pdfplumber
 nltk.download('punkt', quiet=True)
+
+
+# Ensure punkt is downloaded at runtime (safe for local and cloud)
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', quiet=True)
+
 
 def extract_text_from_pdf(pdf_path):
     text = ''
@@ -11,13 +18,15 @@ def extract_text_from_pdf(pdf_path):
             text += page.extract_text() + '\n'
     return text
 
+
 def extract_text_from_txt(txt_path):
     with open(txt_path, 'r', encoding='utf-8') as f:
         return f.read()
+
 
 def clean_text(text):
     # Lowercase, remove non-alphanumeric, tokenize
     text = text.lower()
     text = re.sub(r'[^a-z0-9\s]', ' ', text)
     tokens = nltk.word_tokenize(text)
-    return ' '.join(tokens) 
+    return ' '.join(tokens)
