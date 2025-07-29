@@ -1,0 +1,6 @@
+streamlit
+pandas
+nltk
+pdfplumber
+scikit-learn
+numpy
