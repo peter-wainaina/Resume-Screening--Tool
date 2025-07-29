@@ -1,6 +1,8 @@
 import re
-import nltk
 import pdfplumber
+from nltk.tokenize import TreebankWordTokenizer
+
+tokenizer = TreebankWordTokenizer()
 
 def extract_text_from_pdf(pdf_path):
     text = ''
@@ -18,5 +20,5 @@ def extract_text_from_txt(txt_path):
 def clean_text(text):
     text = text.lower()
     text = re.sub(r'[^a-z0-9\s]', ' ', text)
-    tokens = nltk.word_tokenize(text)
+    tokens = tokenizer.tokenize(text)  # NO punkt needed
     return ' '.join(tokens)
