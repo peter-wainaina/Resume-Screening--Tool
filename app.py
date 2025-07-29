@@ -11,7 +11,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Resume Screening Tool", layout="wide")
 
-st.title('📄 Resume Screening Tool')
+st.title('Resume Screening Tool')
 
 st.write(
     'Upload a job description and multiple resumes (PDF or TXT). '
@@ -21,12 +21,12 @@ st.write(
 job_desc = st.text_area('✍️ Paste the Job Description here:', height=200)
 
 resume_files = st.file_uploader(
-    '📎 Upload Resumes (PDF or TXT, multiple allowed)',
+    'Upload Resumes (PDF or TXT, multiple allowed)',
     type=['pdf', 'txt'],
     accept_multiple_files=True
 )
 
-if st.button('🔍 Check Resumes'):
+if st.button('Check Resumes'):
     if not job_desc or not resume_files:
         st.warning('⚠️ Please provide both a job description and at least one resume.')
     else:
