@@ -10,7 +10,7 @@ import streamlit as st
 import nltk
 import pandas as pd
 # Ensure NLTK punkt data is available (fixes deployment errors)
-nltk.download('punkt_tab', quiet=True)
+nltk.download('punkt', quiet=True)
 
 
 st.title('Resume Screening Tool')
