@@ -1,13 +1,16 @@
-import pandas as pd
-import streamlit as st
-import os
-import tempfile
+from scorer import score_resumes
 from resume_parser import (
     extract_text_from_pdf,
     extract_text_from_txt,
     clean_text,
 )
-from scorer import score_resumes
+import tempfile
+import os
+import streamlit as st
+import nltk
+import pandas as pd
+# Ensure NLTK punkt data is available (fixes deployment errors)
+nltk.download('punkt', quiet=True)
 
 
 st.title('Resume Screening Tool')
