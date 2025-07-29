@@ -1,4 +1,4 @@
-# Smart Resume Screening Tool
+Resume Screening Tool
 
 ## Approach
 
