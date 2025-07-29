@@ -42,5 +42,7 @@ This project is a Streamlit web application that helps automate the process of s
 6. **Open the provided local URL (usually http://localhost:8501) in your browser to use the app.**
 
 ---
+## PREVIEW
+<img width="1902" height="938" alt="image" src="https://github.com/user-attachments/assets/7b3b0f1e-f8c5-4742-a343-220dd3cef8cf" />
 
 Feel free to modify or extend the project as needed for your use case!
